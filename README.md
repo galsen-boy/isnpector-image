@@ -26,9 +26,9 @@ Il est important de noter que la stéganographie n'est qu'un élément d'un ense
 
 Le programme décrit agit comme un outil de stéganographie avec des fonctionnalités spécifiques.
 
-  1. **Description de l'image et extraction de l'emplacement (avec l'option -map)** : Le programme prend un fichier image en entrée, comme indiqué dans la description du projet. Lorsqu'on utilise le drapeau **-map**, le programme extrait les données GPS des métadonnées de l'image. Ces données GPS peuvent révéler l'emplacement où l'image a été prise.
+  1. **Description de l'image et extraction de l'emplacement (avec l'option -map)** : Le programme prend un fichier image en entrée, comme indiqué dans la description du projet. Lorsqu'on utilise le flag **-map**, le programme extrait les données GPS des métadonnées de l'image. Ces données GPS peuvent révéler l'emplacement où l'image a été prise.
 
-  2. **Extraction de la clé PGP (avec l'option -steg)** : Lorsqu'on utilise le drapeau **-steg**, le programme lit le contenu du fichier image sous forme de données brutes. Il identifie ensuite le bloc ou la section de l'image où la clé PGP (Pretty Good Privacy) est cachée. La clé PGP peut avoir été intégrée à l'aide d'une technique stéganographique, comme le LSB ou une autre méthode. Le programme localise les points de départ et de fin du bloc caché, puis extrait la clé PGP.
+  2. **Extraction de la clé PGP (avec l'option -steg)** : Lorsqu'on utilise le flag **-steg**, le programme lit le contenu du fichier image sous forme de données brutes. Il identifie ensuite le bloc ou la section de l'image où la clé PGP (Pretty Good Privacy) est cachée. La clé PGP peut avoir été intégrée à l'aide d'une technique stéganographique, comme le LSB ou une autre méthode. Le programme localise les points de départ et de fin du bloc caché, puis extrait la clé PGP.
 
 
 

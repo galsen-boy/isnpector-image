@@ -1,8 +1,7 @@
 import argparse
 from PIL import Image
 
-def rational_to_float(rational):
-    return float(rational[0]) / float(rational[1])
+
 
 def extract_location(path):
     with open(path, "rb") as src:
@@ -20,24 +19,24 @@ def extract_location(path):
                 longitude = gps_info.get(4)
 
                 if latitude and longitude:
-                    lat_degrees = rational_to_float(latitude[0])
-                    lat_minutes = rational_to_float(latitude[1])
-                    lat_seconds = rational_to_float(latitude[2])
+                    lat_degrees = latitude[0]
+                    lat_minutes = latitude[1]
+                    lat_seconds = latitude[2]
                     lat = lat_degrees + (lat_minutes / 60) + (lat_seconds / 3600)
-
-                    lon_degrees = rational_to_float(longitude[0])
-                    lon_minutes = rational_to_float(longitude[1])
-                    lon_seconds = rational_to_float(longitude[2])
+                    lat = float(lat)
+                    lon_degrees = longitude[0]
+                    lon_minutes = longitude[1]
+                    lon_seconds = longitude[2]
                     lon = lon_degrees + (lon_minutes / 60) + (lon_seconds / 3600)
-
+                    lon = float(lon)
                     # Appliquer le référentiel (N/S pour la latitude et E/O pour la longitude)
                     if latitude_ref == 'S':
                         lat = -lat
                     if longitude_ref == 'W':
                         lon = -lon
 
-                    print(f"Lat: {lat}")
-                    print(f"Lon: {lon}")
+                    print(f"Lat/lon: {lat}/{lon}")
+                   
                     return
 
     print("Location data not found in the image's EXIF.")
